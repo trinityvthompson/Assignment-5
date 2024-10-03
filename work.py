@@ -5,7 +5,6 @@
 import sys
 import time
 
-
 # Input: v an integer representing the minimum lines of code and
 #        k an integer representing the productivity factor
 # Output: computes the sum of the series (v + v // k + v // k**2 + ...)
@@ -39,13 +38,15 @@ def binary_search (n, k):
   low = 1
   high = n
 
+  # Narrowing search interval while low < high
   while low < high:
-    midpoint = (low + high) // 2
+    midpoint = (low + high) // 2 # Calculating midpoint
 
+    # If the total lines written with v = midpoint is less than n, reset low boundary
     if sum_series(midpoint, k) < n:
       low = midpoint + 1
     else:
-      high = midpoint
+      high = midpoint # Search lower half 
 
   return low
 
