@@ -2,6 +2,13 @@
 # Trinity Thompson tyt242
 # Marissa Shuchart ms87339
 
+"""
+Program that determines the minimum number of lines of code (v) that
+Chris has to write before drinking a cup of coffee to complete a programming assignment. 
+Chris' productivity will decrease by a factor of k each time he drinks
+a cup of coffee.
+"""
+
 import sys
 import time
 
@@ -10,6 +17,7 @@ import time
 # Output: computes the sum of the series (v + v // k + v // k**2 + ...)
 #         returns the sum of the series
 def sum_series (v, k):
+  """Helper function that returns total number of lines written dependent on v and k"""
   total = 0 # Initialize total number of lines written
   factor = 1 # Factor that controls productivity decay (starts at 1)
 
@@ -23,6 +31,7 @@ def sum_series (v, k):
 #        k an integer representing the productivity factor
 # Output: returns v the minimum lines of code to write using linear search
 def linear_search (n, k):
+  """Function that seearches v linearly"""
   v = 1
 
   while sum_series(v, k) < n: # While lines written is less than lines needed to write, increment v by 1
@@ -34,6 +43,7 @@ def linear_search (n, k):
 #        k an integer representing the productivity factor
 # Output: returns v the minimum lines of code to write using binary search
 def binary_search (n, k):
+  """Function that performs binary search on values of v"""
   # Initialize a low and high value
   low = 1
   high = n
@@ -51,6 +61,7 @@ def binary_search (n, k):
   return low
 
 def main():
+  """Main function to read input from file and print to output file"""
   # read number of cases
   line = sys.stdin.readline()
   line = line.strip()
