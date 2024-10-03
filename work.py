@@ -4,7 +4,7 @@
 
 """
 Program that determines the minimum number of lines of code (v) that
-Chris has to write before drinking a cup of coffee to complete a programming assignment. 
+Chris has to write before drinking a cup of coffee to complete a programming assignment.
 Chris' productivity will decrease by a factor of k each time he drinks
 a cup of coffee.
 """
@@ -21,7 +21,7 @@ def sum_series (v, k):
   total = 0 # Initialize total number of lines written
   factor = 1 # Factor that controls productivity decay (starts at 1)
 
-  while v // factor > 0: # Continue as long as Chris can write lines of code 
+  while v // factor > 0: # Continue as long as Chris can write lines of code
     total += v // factor # Add number of lines Chris can write given the current productivity
     factor *= k # Decrease productivity
 
@@ -34,9 +34,9 @@ def linear_search (n, k):
   """Function that seearches v linearly"""
   v = 1
 
-  while sum_series(v, k) < n: # While lines written is less than lines needed to write, increment v by 1
+  while sum_series(v, k) < n: # While lines written is less than lines need to write, increment v
     v += 1
-  
+
   return v
 
 # Input: n an integer representing the total number of lines of code
@@ -56,7 +56,7 @@ def binary_search (n, k):
     if sum_series(midpoint, k) < n:
       low = midpoint + 1
     else:
-      high = midpoint # Search lower half 
+      high = midpoint # Search lower half
 
   return low
 
