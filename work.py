@@ -67,7 +67,7 @@ def main():
     line = line.strip()
     num_cases = int (line)
 
-    for i in range (num_cases):
+    for _ in range (num_cases):
         line = sys.stdin.readline()
         line = line.strip()
         inp =  line.split()
